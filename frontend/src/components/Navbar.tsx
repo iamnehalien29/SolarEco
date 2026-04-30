@@ -38,7 +38,7 @@ const Navbar = () => {
             <Sun className="w-6 h-6 text-slate-900" />
           </div>
           <span className="text-xl font-bold tracking-tight">
-            Solar<span className="text-primary">Eco</span>
+            Fk construction <span className="text-primary">& Developers</span>
           </span>
         </Link>
 

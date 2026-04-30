@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 const GoogleMap = () => {
-  const [mapUrl, setMapUrl] = useState("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.223391312041!2d77.0330773!3d28.4594965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19d582e38859%3A0x2cf5e8e5c67f3522!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1714312345678!5m2!1sen!2sin");
+  const [mapUrl, setMapUrl] = useState("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56358.835472782!2d94.2152646!3d27.3752187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3740e69882958371%3A0x6b699a77864c0901!2sGogamukh%2C%20Assam!5e0!3m2!1sen!2sin!4v1714498000000!5m2!1sen!2sin");
 
   useEffect(() => {
     const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";

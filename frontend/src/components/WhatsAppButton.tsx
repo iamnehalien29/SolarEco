@@ -6,8 +6,8 @@ import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
   const [mounted, setMounted] = useState(false);
-  const whatsappNumber = "911234567890";
-  const message = "Hi SolarEco! I'm interested in a solar installation for my property.";
+  const whatsappNumber = "919101959973";
+  const message = "Hi Fk construction & Developers! I'm interested in a solar installation for my property.";
 
   useEffect(() => {
     setMounted(true);

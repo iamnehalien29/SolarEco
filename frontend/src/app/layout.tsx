@@ -4,9 +4,9 @@ import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
-  title: "SolarEco | Premium Solar Installation for Home & Business",
-  description: "Save up to 80% on electricity bills with SolarEco. Reliable, eco-friendly solar solutions with 25-year warranty and govt subsidy support.",
-  keywords: ["solar installation", "solar panels india", "green energy", "solar subsidy", "residential solar"],
+  title: "Fk construction & Developers | Premium Solar & Sustainable Solutions",
+  description: "Save up to 80% on electricity bills with Fk construction & Developers. Reliable, eco-friendly solar solutions with professional installation and govt subsidy support.",
+  keywords: ["Fk construction & Developers", "solar installation", "Assam solar", "Dhemaji solar", "green energy"],
 };
 
 export default function RootLayout({

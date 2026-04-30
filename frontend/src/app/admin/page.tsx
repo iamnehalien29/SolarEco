@@ -138,7 +138,7 @@ const AdminDashboard = () => {
           <div className="bg-solar-gradient p-2 rounded-lg">
              <LayoutDashboard className="w-6 h-6 text-slate-900" />
           </div>
-          <span className="text-xl font-bold tracking-tight">Solar<span className="text-primary">Eco</span></span>
+          <span className="text-xl font-bold tracking-tight">Fk <span className="text-primary">construction</span></span>
         </div>
 
         <nav className="flex-1 space-y-1">

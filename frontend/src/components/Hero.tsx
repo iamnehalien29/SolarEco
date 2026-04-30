@@ -22,11 +22,11 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
-            Power Your Future with <span className="text-gradient">Smart Solar</span> Solutions ☀️
+            Go Solar with <span className="text-gradient">PM Surya Ghar</span> Yojana ☀️
           </h1>
           
           <p className="text-lg text-slate-400 mb-8 max-w-lg">
-            Save up to 80% on electricity bills with reliable solar installation for homes & businesses. Eco-friendly, sustainable, and high-efficiency.
+            Join the government initiative for free electricity. Fk construction & Developers helps you install solar with maximum subsidies and 300 units of free power monthly.
           </p>
 
           <div className="flex flex-wrap gap-4">

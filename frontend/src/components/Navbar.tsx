@@ -33,9 +33,16 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="bg-solar-gradient p-2 rounded-lg group-hover:rotate-12 transition-transform">
-            <Sun className="w-6 h-6 text-slate-900" />
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="bg-solar-gradient p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
+            <img 
+              src="/logo.png" 
+              alt="Logo" 
+              className="w-8 h-8 object-contain"
+              onError={(e) => { (e.target as any).style.display = 'none'; }}
+            />
+            {/* Fallback Icon if no logo.png exists */}
+            <Sun className="w-6 h-6 text-slate-900 logo-fallback" />
           </div>
           <span className="text-xl font-bold tracking-tight">
             Fk construction <span className="text-primary">& Developers</span>

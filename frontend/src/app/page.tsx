@@ -4,6 +4,7 @@ import { Send } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import SolarCalculator from "@/components/SolarCalculator";
 import PortfolioGrid from "@/components/PortfolioGrid";
 import Testimonials from "@/components/Testimonials";
 import ContactForm from "@/components/ContactForm";
@@ -42,6 +43,8 @@ export default function Home() {
       </section>
 
       <Services />
+      
+      <SolarCalculator />
       
       <PortfolioGrid />
 

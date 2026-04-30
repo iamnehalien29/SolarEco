@@ -1,13 +1,4 @@
-import { Send } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import PortfolioGrid from "@/components/PortfolioGrid";
-import Testimonials from "@/components/Testimonials";
-import ContactForm from "@/components/ContactForm";
-import GoogleMap from "@/components/GoogleMap";
-
-export default function Home() {
+"use client";\n\nimport { Send } from "lucide-react";\nimport Navbar from "@/components/Navbar";\nimport Hero from "@/components/Hero";\nimport Services from "@/components/Services";\nimport PortfolioGrid from "@/components/PortfolioGrid";\nimport Testimonials from "@/components/Testimonials";\nimport ContactForm from "@/components/ContactForm";\nimport GoogleMap from "@/components/GoogleMap";\n\nexport default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />

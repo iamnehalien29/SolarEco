@@ -120,10 +120,10 @@ export default function Home() {
             Fk construction & Developers © 2026. All rights reserved.
           </div>
           <div className="flex gap-6">
-             <a href={settings?.socialLinks?.facebook || "#"} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Facebook</a>
-             <a href={settings?.socialLinks?.instagram || "#"} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
-             <a href={settings?.socialLinks?.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
-             <a href={settings?.socialLinks?.twitter || "#"} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Twitter</a>
+             {settings?.socialLinks?.facebook && <a href={settings.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Facebook</a>}
+             {settings?.socialLinks?.instagram && <a href={settings.socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>}
+             {settings?.socialLinks?.linkedin && <a href={settings.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>}
+             {settings?.socialLinks?.twitter && <a href={settings.socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Twitter</a>}
           </div>
           <div className="flex gap-8">
             <a href="#" className="hover:text-primary">Privacy Policy</a>

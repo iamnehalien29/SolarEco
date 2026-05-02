@@ -17,12 +17,12 @@ const SolarCalculator = () => {
 
   // PM Surya Ghar Subsidy Rules
   let subsidy = 0;
-  if (kwNeeded <= 2) {
-    subsidy = kwNeeded * 30000;
-  } else if (kwNeeded === 3) {
-    subsidy = 60000 + 18000;
+  if (kwNeeded === 1) {
+    subsidy = 48000;
+  } else if (kwNeeded === 2) {
+    subsidy = 96000;
   } else {
-    subsidy = 78000; // Max subsidy is capped at 78,000
+    subsidy = 130800; // Max subsidy is capped at 1,30,800 for 3kW and above
   }
 
   const yearlySavings = Number(monthlyBill) * 12;
@@ -64,7 +64,7 @@ const SolarCalculator = () => {
               <Sun className="w-8 h-8 text-primary shrink-0" />
               <p className="text-sm text-slate-300">
                 Calculations are based on the latest <strong>PM Surya Ghar Muft Bijli Yojana</strong> rates. 
-                Subsidies go up to ₹78,000 for residential homes.
+                Subsidies go up to ₹1,30,800 for residential homes.
               </p>
             </div>
           </div>

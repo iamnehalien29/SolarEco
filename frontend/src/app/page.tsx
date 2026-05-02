@@ -19,25 +19,37 @@ export default function Home() {
       {/* PM Surya Ghar Scheme Section */}
       <section className="py-12 bg-primary/5 border-y border-primary/10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="glass p-8 rounded-[2rem] border-primary/20 flex flex-col md:flex-row items-center gap-8">
-            <div className="bg-white p-4 rounded-2xl shrink-0">
-               <img 
-                 src="https://pmsuryaghar.gov.in/assets/images/logo.png" 
-                 alt="PM Surya Ghar Logo" 
-                 className="h-16 w-auto"
-                 onError={(e) => { (e.target as any).src = "https://placehold.co/200x80?text=PM+Surya+Ghar"; }}
-               />
+          <div className="glass p-8 rounded-[2rem] border-primary/20 flex flex-col items-center gap-8">
+            <div className="flex flex-col md:flex-row items-center gap-8 w-full">
+              <div className="bg-white p-4 rounded-2xl shrink-0">
+                 <img 
+                   src="https://pmsuryaghar.gov.in/assets/images/logo.png" 
+                   alt="PM Surya Ghar Logo" 
+                   className="h-16 w-auto"
+                   onError={(e) => { (e.target as any).src = "https://placehold.co/200x80?text=PM+Surya+Ghar"; }}
+                 />
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <h4 className="text-2xl font-bold mb-2">PM Surya Ghar: Muft Bijli Yojana</h4>
+                <p className="text-slate-400">
+                  Get up to <span className="text-primary font-bold">300 units of free electricity</span> every month. 
+                  Fk construction & Developers is an authorized partner to help you claim subsidies up to <span className="text-white font-bold">₹78,000</span>.
+                </p>
+              </div>
+              <button className="bg-primary text-slate-900 px-8 py-3 rounded-xl font-bold whitespace-nowrap hover:scale-105 transition-all">
+                Apply Now
+              </button>
             </div>
-            <div className="flex-1 text-center md:text-left">
-              <h4 className="text-2xl font-bold mb-2">PM Surya Ghar: Muft Bijli Yojana</h4>
-              <p className="text-slate-400">
-                Get up to <span className="text-primary font-bold">300 units of free electricity</span> every month. 
-                Fk construction & Developers is an authorized partner to help you claim subsidies up to <span className="text-white font-bold">₹78,000</span>.
-              </p>
+            
+            {/* Added Client Banner */}
+            <div className="w-full mt-4 rounded-2xl overflow-hidden shadow-2xl border border-primary/20">
+              <img 
+                src="/pm-yojna-banner.jpg" 
+                alt="PM Surya Ghar Yojna Pricing and Subsidy Details" 
+                className="w-full h-auto object-cover"
+              />
             </div>
-            <button className="bg-primary text-slate-900 px-8 py-3 rounded-xl font-bold whitespace-nowrap hover:scale-105 transition-all">
-              Apply Now
-            </button>
+
           </div>
         </div>
       </section>

@@ -21,19 +21,28 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="glass p-8 rounded-[2rem] border-primary/20 flex flex-col items-center gap-8">
             <div className="flex flex-col md:flex-row items-center gap-8 w-full">
-              <div className="bg-white p-4 rounded-2xl shrink-0">
-                 <img 
-                   src="https://pmsuryaghar.gov.in/assets/images/logo.png" 
-                   alt="PM Surya Ghar Logo" 
-                   className="h-16 w-auto"
-                   onError={(e) => { (e.target as any).src = "https://placehold.co/200x80?text=PM+Surya+Ghar"; }}
-                 />
+              <div className="flex items-center gap-4 shrink-0">
+                <div className="bg-white p-3 rounded-2xl shadow-sm">
+                   <img 
+                     src="https://pmsuryaghar.gov.in/assets/images/logo.png" 
+                     alt="PM Surya Ghar Logo" 
+                     className="h-16 w-auto object-contain"
+                     onError={(e) => { (e.target as any).src = "https://placehold.co/200x80?text=PM+Surya+Ghar"; }}
+                   />
+                </div>
+                <div className="bg-white p-2 rounded-2xl shadow-sm">
+                   <img 
+                     src="/fk-logo-pm-yojna.jpg" 
+                     alt="FK Construction Logo" 
+                     className="h-16 w-16 object-cover rounded-xl"
+                   />
+                </div>
               </div>
               <div className="flex-1 text-center md:text-left">
                 <h4 className="text-2xl font-bold mb-2">PM Surya Ghar: Muft Bijli Yojana</h4>
                 <p className="text-slate-400">
                   Get up to <span className="text-primary font-bold">300 units of free electricity</span> every month. 
-                  Fk construction & Developers is an authorized partner to help you claim subsidies up to <span className="text-white font-bold">₹78,000</span>.
+                  Fk construction & Developers is an authorized partner to help you claim <span className="text-white font-bold">Central Subsidy of ₹85,800</span> and <span className="text-white font-bold">State Subsidy of ₹45,800</span>.
                 </p>
               </div>
               <button className="bg-primary text-slate-900 px-8 py-3 rounded-xl font-bold whitespace-nowrap hover:scale-105 transition-all">

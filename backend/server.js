@@ -68,10 +68,21 @@ app.get('/api/projects', async (req, res) => {
 
 app.get('/api/testimonials', async (req, res) => {
   try {
-    const testimonials = await Testimonial.find().sort({ createdAt: -1 });
+    const testimonials = await Testimonial.find({ approved: true }).sort({ createdAt: -1 });
     res.json(testimonials);
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+});
+
+app.post('/api/testimonials', async (req, res) => {
+  try {
+    const newTestimonial = new Testimonial(req.body);
+    newTestimonial.approved = false; // requires admin approval
+    await newTestimonial.save();
+    res.status(201).json({ message: 'Review submitted successfully!' });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
   }
 });
 
@@ -119,6 +130,33 @@ app.delete('/api/projects/:id', verifyToken, async (req, res) => {
   try {
     await Project.findByIdAndDelete(req.params.id);
     res.json({ message: 'Project deleted' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/admin/testimonials', verifyToken, async (req, res) => {
+  try {
+    const testimonials = await Testimonial.find().sort({ createdAt: -1 });
+    res.json(testimonials);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.put('/api/testimonials/:id/approve', verifyToken, async (req, res) => {
+  try {
+    const testimonial = await Testimonial.findByIdAndUpdate(req.params.id, { approved: true }, { new: true });
+    res.json(testimonial);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.delete('/api/testimonials/:id', verifyToken, async (req, res) => {
+  try {
+    await Testimonial.findByIdAndDelete(req.params.id);
+    res.json({ message: 'Testimonial deleted' });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

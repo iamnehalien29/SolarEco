@@ -47,7 +47,7 @@ const AdminDashboard = () => {
       const [leadRes, projRes, testRes, settRes] = await Promise.all([
         fetch(`${apiBase}/api/leads`, { headers }),
         fetch(`${apiBase}/api/projects`, { headers }),
-        fetch(`${apiBase}/api/testimonials`),
+        fetch(`${apiBase}/api/admin/testimonials`, { headers }),
         fetch(`${apiBase}/api/settings`)
       ]);
       
@@ -111,6 +111,31 @@ const AdminDashboard = () => {
         body: JSON.stringify(siteSettings)
       });
       alert("Settings saved!");
+    } catch (err) { console.error(err); }
+  };
+
+  const handleApproveTestimonial = async (id: string) => {
+    const token = localStorage.getItem("admin_token");
+    const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    try {
+      await fetch(`${apiBase}/api/testimonials/${id}/approve`, {
+        method: "PUT",
+        headers: { "Authorization": `Bearer ${token}` }
+      });
+      fetchData();
+    } catch (err) { console.error(err); }
+  };
+
+  const handleDeleteTestimonial = async (id: string) => {
+    if (!confirm("Delete this review?")) return;
+    const token = localStorage.getItem("admin_token");
+    const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    try {
+      await fetch(`${apiBase}/api/testimonials/${id}`, {
+        method: "DELETE",
+        headers: { "Authorization": `Bearer ${token}` }
+      });
+      fetchData();
     } catch (err) { console.error(err); }
   };
 
@@ -325,6 +350,56 @@ const AdminDashboard = () => {
                 </div>
               ))}
             </div>
+          </div>
+        )}
+
+        {/* --- TESTIMONIALS --- */}
+        {activeTab === "testimonials" && (
+          <div className="glass rounded-3xl overflow-hidden shadow-2xl">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="border-b border-slate-800 bg-slate-900/50">
+                  <th className="px-6 py-4 font-bold text-sm">Reviewer</th>
+                  <th className="px-6 py-4 font-bold text-sm">Review Content</th>
+                  <th className="px-6 py-4 font-bold text-sm">Rating</th>
+                  <th className="px-6 py-4 font-bold text-sm">Status</th>
+                  <th className="px-6 py-4 font-bold text-sm text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800">
+                {testimonials.map((t: any) => (
+                  <tr key={t._id} className="hover:bg-white/5 transition-colors group">
+                    <td className="px-6 py-4">
+                      <div className="font-bold">{t.name}</div>
+                      <div className="text-xs text-slate-500">{t.role || "Customer"}</div>
+                    </td>
+                    <td className="px-6 py-4 text-sm text-slate-400 max-w-md truncate">
+                      "{t.content}"
+                    </td>
+                    <td className="px-6 py-4 text-sm text-accent font-bold">
+                      {t.rating} / 5
+                    </td>
+                    <td className="px-6 py-4">
+                      {t.approved ? (
+                        <span className="text-xs font-bold text-green-500 px-2 py-1 bg-green-500/10 rounded-md">Approved</span>
+                      ) : (
+                        <span className="text-xs font-bold text-yellow-500 px-2 py-1 bg-yellow-500/10 rounded-md">Pending</span>
+                      )}
+                    </td>
+                    <td className="px-6 py-4 text-right space-x-3">
+                      {!t.approved && (
+                        <button onClick={() => handleApproveTestimonial(t._id)} className="text-sm text-green-500 font-bold hover:underline">
+                          Approve
+                        </button>
+                      )}
+                      <button onClick={() => handleDeleteTestimonial(t._id)} className="text-slate-500 hover:text-red-500 transition-colors">
+                        <Trash2 className="w-4 h-4 inline" />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
 

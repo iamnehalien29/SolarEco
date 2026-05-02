@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Send } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -11,6 +12,15 @@ import ContactForm from "@/components/ContactForm";
 import GoogleMap from "@/components/GoogleMap";
 
 export default function Home() {
+  const [settings, setSettings] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("https://solareco.onrender.com/api/settings")
+      .then(res => res.json())
+      .then(data => setSettings(data))
+      .catch(console.error);
+  }, []);
+
   return (
     <main className="min-h-screen">
       <Navbar />
@@ -110,10 +120,10 @@ export default function Home() {
             Fk construction & Developers © 2026. All rights reserved.
           </div>
           <div className="flex gap-6">
-             <a href="#" className="hover:text-primary transition-colors">Facebook</a>
-             <a href="#" className="hover:text-primary transition-colors">Instagram</a>
-             <a href="#" className="hover:text-primary transition-colors">LinkedIn</a>
-             <a href="#" className="hover:text-primary transition-colors">Twitter</a>
+             <a href={settings?.socialLinks?.facebook || "#"} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Facebook</a>
+             <a href={settings?.socialLinks?.instagram || "#"} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a>
+             <a href={settings?.socialLinks?.linkedin || "#"} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
+             <a href={settings?.socialLinks?.twitter || "#"} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Twitter</a>
           </div>
           <div className="flex gap-8">
             <a href="#" className="hover:text-primary">Privacy Policy</a>

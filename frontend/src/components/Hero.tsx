@@ -16,11 +16,8 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 bg-slate-800/50 border border-slate-700 px-4 py-2 rounded-full text-primary text-sm font-medium mb-6">
-            <Zap className="w-4 h-4" />
-            <span>Switch to Green Energy Today</span>
-          </div>
-          
+
+
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
             Go Solar with <span className="text-gradient">PM Surya Ghar</span> Yojana ☀️
           </h1>
